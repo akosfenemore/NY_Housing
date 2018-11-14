@@ -1,0 +1,12 @@
+# Packages for data manipulation
+numpy
+pandas
+
+# Packages for data visualisation
+seaborn
+
+# ML Packages
+scikit-learn
+
+# API packages
+Flask
