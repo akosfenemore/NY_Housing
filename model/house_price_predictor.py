@@ -22,4 +22,19 @@ house_data['SALE DATE'] = house_data['SALE DATE'].astype('datetime64')
 # Remove rows where house prices are missing, i.e. have ' -  ' rather than house price
 house_data = house_data[house_data['SALE PRICE'] != ' -  ']
 
+#
+house_data.head()
 
+sns.tsplot(house_data['SALE DATE'].astype('datetime64[ns]'), house_data['SALE PRICE'].astype('float64'))
+
+ax = sns.lineplot(x='SALE DATE', y='SALE PRICE', data=house_data)
+
+sns.scatterplot(house_data['SALE DATE'].astype('datetime64[ns]'), house_data['SALE PRICE'].astype('float64'))
+
+plt.scatter(house_data['SALE DATE'].astype('datetime64[ns]'), house_data['SALE PRICE'].astype('float64'))
+
+house_data.dtypes
+
+# pd.plotting.scatter_matrix(house_data, figsize=(6, 6))
+pd.plotting.scatter_matrix(house_data, figsize=(12, 12))
+plt.savefig('scatter.png')
